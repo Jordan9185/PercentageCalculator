@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     // The lowest label, showing the percentage result.
     @IBOutlet weak var resultLabel: UILabel!
     
-    
-    
     // MARK: - Methods for UIElements
     // Called when the numberSlider value is changed. It will update its value to be a whole number and calculate and display the percentage results.
     @IBAction func numberValueChanged(_ sender: UISlider) {
@@ -50,7 +48,7 @@ class ViewController: UIViewController {
             self.percentageLabel.text = "\(v)%"
         }
         
-        self.resultLabel.text = "\(rV + 10)"
+        self.resultLabel.text = "\(rV)"
     }
     
     // MARK: - Percentage Calculation
@@ -58,19 +56,5 @@ class ViewController: UIViewController {
     func percentage(value: Float, _ percentage: Float) -> Float {
         return value * (percentage / 100)
     }
-    
-    
-    
-    // MARK: - System methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

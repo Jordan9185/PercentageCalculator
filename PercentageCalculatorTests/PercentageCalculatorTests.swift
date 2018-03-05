@@ -35,4 +35,13 @@ class PercentageCalculatorTests: XCTestCase {
         XCTAssert(p == 25)
     }
     
+    func testLabelValuesShowedProperly() {
+        let _ = vc.view
+        vc.updateLabels(nV: 80.0, 50.0, 40.0)
+        
+        // The labels should now display 80, 50 and 40
+        XCTAssert(vc.numberLabel.text == "80.0", "numberLabel doesn't show the right text")
+        XCTAssert(vc.percentageLabel.text == "50.0%", "percentageLabel doesn't show the right text")
+        XCTAssert(vc.resultLabel.text == "40.0", "resultLabel doesn't show the right text")
+    }
 }
