@@ -11,9 +11,13 @@ import XCTest
 
 class PercentageCalculatorTests: XCTestCase {
     
+    var vc: ViewController!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        vc = storyboard.instantiateInitialViewController() as! ViewController
     }
     
     override func tearDown() {
@@ -21,16 +25,14 @@ class PercentageCalculatorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    // funciton prototype:
+    //    func percentage(value: Float, _ percentage: Float) -> Float {
+    //        return value * (percentage / 100)
+    //    }
+    func testPercentageCalculator() {
+        let p = vc.percentage(value: 50, 50)
+        
+        XCTAssert(p == 25)
     }
     
 }
